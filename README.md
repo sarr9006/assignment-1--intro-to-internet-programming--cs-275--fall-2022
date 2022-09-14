@@ -21,14 +21,14 @@ Before you begin, **update Node, NPM, ESLint, and Stylelint**.
 * Do not add images to this project.
 
 ### HTML
-* Place all your markup in `dev/index.html`.
+* Place all your markup in `dev/html/index.html`.
 
 ### CSS
-* Place all your styles in `dev/style.css`.
+* Place all your styles in `dev/css/style.css`.
 * No CSS libraries may be used.
 
 ### JavaScript
-* Place all your JavaScript in `dev/app.js`.
+* Place all your JavaScript in `dev/js/app.js`.
 * No JavaScript libraries may be used.
 * No ESLint errors, except warnings for line lengths, are allowed.
 * Use backticks exclusively for all variable interpolation and string manipulation. Should you need to defeat this rule, explain so in a comment.
