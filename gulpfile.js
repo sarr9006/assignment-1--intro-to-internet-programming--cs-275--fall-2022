@@ -13,8 +13,6 @@ const { src, dest, series, watch } = require(`gulp`),
     async function chrome () {
         browserChoice = `google chrome`;
     }
-    
-
 
     let valCSS = () => {
         return src([
@@ -74,10 +72,6 @@ const { src, dest, series, watch } = require(`gulp`),
     };
     exports.lintJS = lintJS;
 
-    
-  
-    
-
 let serve = () => {
     browserSync({
         notify: true,
@@ -97,24 +91,28 @@ let serve = () => {
 /*
 testing
 */
-    watch(`dev/js/**/*.js` /*,series(validateJS, transpileJSForDev)*/)
+    watch(`dev/js/**/*.js` ,series(validateJS, transpileJSForDev))
         .on(`change`, reload);
 
-    watch(`dev/css/**/*.css` /*,validateCSS*/)
+    watch(`dev/css/**/*.css`)
         .on(`change`, reload);
 
-    watch(`dev/html/**/*.html` /*, validateHTML*/)
+    watch(`dev/html/**/*.html`)
         .on(`change`, reload);
 
 };
 exports.chrome = series(chrome, serve);
-//exports.validateCSS = validateCSS;
+
 exports.serve = series(
     validateHTML,
-   // validateCSS,
     validateJS,
     transpileJSForDev,
     serve
+);
+exports.build = series(
+    compressHTML,
+    compressCSS,
+    transpileJSForProd,
 );
 
 exports.default = serve;

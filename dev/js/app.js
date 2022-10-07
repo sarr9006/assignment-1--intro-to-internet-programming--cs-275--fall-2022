@@ -3,8 +3,14 @@ window.onload = () => {
     let table2 = document.getElementById(`table2`);
     let content = ``;
     let counter = 1;
+    let flip = ``;
 
     let input = window.prompt(`Tell me the size of your table`, 20);
+    // error message if <=1
+    while (input <=1){
+         input = window.prompt(`Wrong input, enter a whole number bigger than 1`, 5);
+    }
+
     input = parseInt(input, 10);
     console.log(typeof input);
 
@@ -27,28 +33,32 @@ window.onload = () => {
 
     output.innerHTML = content;
 
-    ///
-    content = `<table>`;
+    /// the start of the fipped matrix 
+    filp = `<table>`;
 
     for(let i = 0; i < myNewArray.length; i++) {
-        content += `<tr>`;
+        filp += `<tr>`;
 
         for(let j = 0; j < myNewArray.length; j++) {
 
             let hold =(i*myNewArray.length) + 1 + j;
             if(!((myNewArray.length + ((myNewArray.length -1 )*i) === hold))) {
-                hold =(myNewArray.length *myNewArray.length) -hold;
+                hold =(myNewArray.length *myNewArray.length) - hold;
                 hold++;
+                filp += `<td>${hold}</td>`;
             }
-
-            content += `<td>${hold}</td>`;
+            //numbers that dont change will turn yellow 
+            else
+            {
+                filp += `<td bgcolor =  "yellow" > ${hold}</td>`;
+            }
         }
 
-        content += `</tr>`;
+        filp += `</tr>`;
     }
 
-    content += `</table>`;
+    filp += `</table>`;
 
-    table2.innerHTML = content;
+    table2.innerHTML = filp;
 
 };

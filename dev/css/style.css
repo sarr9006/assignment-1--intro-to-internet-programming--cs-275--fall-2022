@@ -4,13 +4,17 @@ body {
   
   table,
   td {
-    border: 1px solid black;
+    border: 3px solid black;
+    text-align: center;
+    
   }
   
   table {
     text-align: center;
     border-collapse: collapse;
-    margin: 12px 0;
+    margin-left: auto;  
+    margin-right: auto;  
+    background-color: coral;
   }
   
   td {
@@ -18,7 +22,10 @@ body {
   }
   h1 {
     text-align: center;
+    border-collapse: collapse;
   }
-  h2 {
-    text-align: center;
+  em{
+    border-color: red;
+    border-collapse: collapse;
   }
+  
