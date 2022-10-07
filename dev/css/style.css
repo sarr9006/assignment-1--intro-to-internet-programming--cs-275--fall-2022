@@ -23,6 +23,13 @@ body {
   h1 {
     text-align: center;
     border-collapse: collapse;
+    
+  }
+  h2{
+    text-align: center;
+    border-collapse: wrap;
+    padding: 8px;
+    border: 1px solid black;
   }
   em{
     border-color: red;
