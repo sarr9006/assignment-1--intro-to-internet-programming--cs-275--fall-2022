@@ -50,10 +50,9 @@ let serve = () => {
         server: {
             baseDir: [
                 `dev`,
-                `.`,
-                `css`,
-                `html`,
-                `js`
+                `temp`,
+                `dev/html`
+        
             ]
         }
     });
